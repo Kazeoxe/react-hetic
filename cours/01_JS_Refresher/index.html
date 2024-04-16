@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rappel JavaScript</title>
+    <link rel="stylesheet" href="assets/styles/main.css" />
+    <meta charset="UTF-8" />
+    <script src="assets/scripts/app.js" type="module"></script>
+  </head>
+
+  <body>
+    <header>
+      <img src="assets/images/js-logo-xs.png" alt="JavaScript logo" />
+      <h1>Rappel JavaScript</h1>
+    </header>
+
+    <ul>
+      <li>Variables et Operations</li>
+      <li>Fonctions</li>
+      <li>Objets</li>
+      <li>Tableaux</li>
+      <li>Les boucles</li>
+      <li>classes,  methodes  et POO</li>
+      <li>le DOM et les Evenements</li>
+
+      <input type="text" id="inputText" placeholder="Ajoutez du texte ici">
+      <button onclick="ajouterElement()">Ajouter</button>
+      <button onclick="supprimerDernierElement()">Supprimer dernier élément</button>
+      <div id="container"></div>
+
+      <script>
+        function ajouterElement() {
+          const container = document.getElementById('container');
+          const inputText = document.getElementById('inputText');
+          const nouveauDiv = document.createElement('div');
+          nouveauDiv.textContent = inputText.value; // Prendre la valeur du champ de saisie
+          nouveauDiv.style.color = 'red'; // Style pour le nouveau div
+          container.appendChild(nouveauDiv); // Ajout du nouveau div au container
+        }
+
+        function supprimerDernierElement() {
+          const container = document.getElementById('container');
+          if (container.lastChild) {
+            container.removeChild(container.lastChild);
+          }
+        }
+      </script>
+      <button onclick="maFonction()">Cliquez-moi</button>
+
+      <script>
+        function maFonction() {
+          alert('Le bouton a été cliqué !');
+        }
+      </script>
+
+
+      <li>Destructuring Operator</li>
+      <li>spread operator</li>
+      <li>Référence vs valeur pour les Variables </li>
+      <li>Programmation asynchrone</li>
+
+    </ul>
+  </body>
+</html>
